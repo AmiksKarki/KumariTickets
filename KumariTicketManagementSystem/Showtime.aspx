@@ -61,11 +61,11 @@
                         </div>
                         <div class="col-md-4">
                             <label>Date:</label>
-                            <asp:TextBox ID="SHOW_DATETextBox" runat="server" Text='<%# Bind("SHOW_DATE") %>' CssClass="form-control form-control-sm" />
+                            <asp:TextBox ID="SHOW_DATETextBox" runat="server" Text='<%# Bind("SHOW_DATE") %>' CssClass="form-control form-control-sm" TextMode="Date" />
                         </div>
                         <div class="col-md-4">
                             <label>Time:</label>
-                            <asp:TextBox ID="SHOW_TIMETextBox" runat="server" Text='<%# Bind("SHOW_TIME") %>' CssClass="form-control form-control-sm" />
+                            <asp:TextBox ID="SHOW_TIMETextBox" runat="server" Text='<%# Bind("SHOW_TIME") %>' CssClass="form-control form-control-sm" TextMode="Time" />
                         </div>
                         <div class="col-md-4">
                             <label>Slot:</label>
