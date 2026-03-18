@@ -100,39 +100,54 @@
             <div class="col-md-4">
                 <div class="card shadow-sm h-100">
                     <div class="card-header bg-white fw-bold">Tickets by Status</div>
-                    <div class="card-body p-0">
-                        <asp:GridView ID="gvTicketStatus" runat="server" AutoGenerateColumns="False" DataSourceID="dsTicketStatus" CssClass="table table-bordered table-striped mb-0 rounded-bottom">
-                            <Columns>
-                                <asp:BoundField DataField="STATUS" HeaderText="Status" />
-                                <asp:BoundField DataField="CNT" HeaderText="Count" />
-                            </Columns>
-                        </asp:GridView>
+                    <div class="card-body pb-3">
+                        <div class="d-flex align-items-end justify-content-around" style="height: 180px;">
+                            <asp:Repeater ID="rptTicketStatus" runat="server" DataSourceID="dsTicketStatus">
+                                <ItemTemplate>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <small class="text-muted fw-bold mb-1"><%# Eval("CNT") %></small>
+                                        <div class="bg-primary rounded-top shadow-sm" style='width: 40px; height: <%# Math.Min(Convert.ToInt32(Eval("CNT")) * 15, 140) %>px;' title='<%# Eval("STATUS") %> : <%# Eval("CNT") %>'></div>
+                                        <span class="small mt-2 text-truncate text-center" style="max-width: 80px;" title='<%# Eval("STATUS") %>'><%# Eval("STATUS") %></span>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card shadow-sm h-100">
                     <div class="card-header bg-white fw-bold">Movies by Genre</div>
-                    <div class="card-body p-0">
-                        <asp:GridView ID="gvGenre" runat="server" AutoGenerateColumns="False" DataSourceID="dsGenre" CssClass="table table-bordered table-striped mb-0 rounded-bottom">
-                            <Columns>
-                                <asp:BoundField DataField="GENRE" HeaderText="Genre" />
-                                <asp:BoundField DataField="CNT" HeaderText="Count" />
-                            </Columns>
-                        </asp:GridView>
+                    <div class="card-body pb-3">
+                        <div class="d-flex align-items-end justify-content-around" style="height: 180px;">
+                            <asp:Repeater ID="rptGenre" runat="server" DataSourceID="dsGenre">
+                                <ItemTemplate>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <small class="text-muted fw-bold mb-1"><%# Eval("CNT") %></small>
+                                        <div class="bg-success rounded-top shadow-sm" style='width: 40px; height: <%# Math.Min(Convert.ToInt32(Eval("CNT")) * 20, 140) %>px;' title='<%# Eval("GENRE") %> : <%# Eval("CNT") %>'></div>
+                                        <span class="small mt-2 text-truncate text-center" style="max-width: 80px;" title='<%# Eval("GENRE") %>'><%# Eval("GENRE") %></span>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card shadow-sm h-100">
                     <div class="card-header bg-white fw-bold">Theaters by City</div>
-                    <div class="card-body p-0">
-                        <asp:GridView ID="gvCity" runat="server" AutoGenerateColumns="False" DataSourceID="dsCity" CssClass="table table-bordered table-striped mb-0 rounded-bottom">
-                            <Columns>
-                                <asp:BoundField DataField="CITY" HeaderText="City" />
-                                <asp:BoundField DataField="CNT" HeaderText="Count" />
-                            </Columns>
-                        </asp:GridView>
+                    <div class="card-body pb-3">
+                        <div class="d-flex align-items-end justify-content-around" style="height: 190px;">
+                            <asp:Repeater ID="rptCity" runat="server" DataSourceID="dsCity">
+                                <ItemTemplate>
+                                    <div class="d-flex flex-column align-items-center">
+                                        <small class="text-muted fw-bold mb-1"><%# Eval("CNT") %></small>
+                                        <div class="bg-info rounded-top shadow-sm" style='width: 40px; height: <%# Math.Min(Convert.ToInt32(Eval("CNT")) * 25, 140) %>px;' title='<%# Eval("CITY") %> : <%# Eval("CNT") %>'></div>
+                                        <span class="small mt-2 text-truncate text-center" style="max-width: 80px;" title='<%# Eval("CITY") %>'><%# Eval("CITY") %></span>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
             </div>
